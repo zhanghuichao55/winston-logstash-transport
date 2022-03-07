@@ -1,41 +1,6 @@
 # winston3-logstash-transport
 
-[![NPM](https://nodei.co/npm/winston3-logstash-transport.png?downloads=true)](https://nodei.co/npm/winston3-logstash-transport/)
 
-[![Actual version published on npm](http://img.shields.io/npm/v/winston3-logstash-transport.svg)](https://www.npmjs.org/package/winston3-logstash-transport)
-[![Master build](https://github.com/OutOfSyncStudios/winston-logstash-transport/actions/workflows/build-master.yml/badge.svg)](https://github.com/OutOfSyncStudios/winston-logstash-transport/actions/workflows/build-master.yml)
-[![Total npm module downloads](http://img.shields.io/npm/dt/winston3-logstash-transport.svg)](https://www.npmjs.org/package/winston3-logstash-transport)
-[![Codacy Badge](https://api.codacy.com/project/badge/Grade/bdc0361233984923a764b05710a2f2f9)](https://www.codacy.com/app/OutOfSyncStudios/winston-logstash-transport?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=OutOfSyncStudios/winston-logstash-transport&amp;utm_campaign=Badge_Grade)
-[![Codacy Coverate Badge](https://api.codacy.com/project/badge/Coverage/bdc0361233984923a764b05710a2f2f9)](https://www.codacy.com/app/OutOfSyncStudios/winston-logstash-transport?utm_source=github.com&utm_medium=referral&utm_content=OutOfSyncStudios/winston-logstash-transport&utm_campaign=Badge_Coverage)
-[![Dependencies badge](https://status.david-dm.org/gh/OutOfSyncStudios/winston-logstash-transport.svg)](https://david-dm.org/OutOfSyncStudios/winston-logstash-transport?view=list)
-
-A winston@3 transport for LogStash.
-
-This winston transport has been rewritten from both `winston-logastah` and `winston-logstash-udp` to use the new Transport behavior from winston@3.
-
-Where possible, this has been updated to mimic the behaviors of the original
-modules. There are some changes that have been made to allow the transport to
-handle either TCP or UDP connections to LogStash, instead of being dedicated to
-a single transport-layer protocol.
-
-## Usage
-
-```js
-const Winston = require('winston');
-const WinstonLogStash = require('winston3-logstash-transport');
-
-const logger = Winston.createLogger();
-
-logger.add(new WinstonLogStash({
-  mode: 'udp',
-  host: '127.0.0.1',
-  port: 28777
-}));
-
-logger.error('Some Error');
-```
-
-## API
 
 ### constructor(options)
 Create a new Logstash Transport
@@ -122,11 +87,4 @@ output {
     }
   }
 }
-```
 
-## [License](#license)
-<a name="license"></a>
-
-Copyright (c) 2018, 2019 Jay Reardon
-
-Copyright (c) 2019-2021 Out of Sync Studios LLC -- Licensed under the MIT license.
