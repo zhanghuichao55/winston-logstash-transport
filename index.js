@@ -100,7 +100,6 @@ class LogstashTransport extends Transport {
         });
       }
 
-      console.info(this.connectionState+"-------------------"+output)
       // setImmediate( () => {
       //   this.emit('logged', output);
       // });
@@ -150,7 +149,6 @@ class LogstashTransport extends Transport {
     }
 
     sendToLogstash(message) {
-      console.log("----sendToLogstash------------------"+message)
 
       // callback = callback || (() => {});
       this.socket.write(message+ "\n");
@@ -159,7 +157,6 @@ class LogstashTransport extends Transport {
 
 
     deliverTCP(message, callback) {
-    console.log("----deliverTCP------------------"+message)
 
     callback = callback || (() => {});
     this.socket.write(message+ "\n",callback);
@@ -222,7 +219,6 @@ class LogstashTransport extends Transport {
         writable: true,
         readable: false
       });
-      console.log("-------------------d-------------")
       this.socket.connect(options, () => {
         this.socket.setKeepAlive(true, 60 * 1000);
         // this.announce();
